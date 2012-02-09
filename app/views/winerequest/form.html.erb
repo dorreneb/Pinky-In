@@ -1,15 +1,16 @@
 <html>
 <body>
+  <div class="querybar">
+    <h1>I would like to buy some wine.</h1>
 
-  <h1>Welcome to Pinky-In! Here be plebs!</h1>
-
-  <%= form_tag("/search", :method => "post") do %>
-    I have $
-    <%= text_field_tag(:budget) %>
-    to accomodate 
-    <%= text_field_tag(:numPeople) %>
-    people.
-    <%= submit_tag("Find me wines!") %>
-  <% end %>
+    <%= form_tag("/search", :method => "post") do %>
+      I have $
+      <%= text_field_tag(:budget, nil, :class => 'textbox') %>
+      to accomodate 
+      <%= text_field_tag(:numPeople, nil, :class=> 'textbox') %>
+      people.
+      <%= submit_tag("Find me wines!") %>
+    <% end %>
+  </div>
 </body>
 </html>

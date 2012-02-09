@@ -2,17 +2,24 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$tan: #e0caa5;
-
-body {
-  background-color: $tan;
-}
+$tan: #EED5B7;
 
 html {
-	background: url('/assets/winebottle.png') no-repeat bottom right fixed;
-	-webkit-background-size: auto;
-	-moz-background-size: auto;
-	-o-background-size: auto;
-	background-size: auto;
+  background: $tan url('/assets/winebottle.png') no-repeat bottom right fixed;
+  -webkit-background-size: auto;
+  -moz-background-size: auto;
+  -o-background-size: auto;
+  background-size: auto;
 }
+
+.querybar {
+  border: 1px solid black;
+  position: relative;
+  width: auto;
+}
+
+.textbox {
+  width: 50px;
+}
+
 
