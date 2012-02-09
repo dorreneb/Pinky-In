@@ -2,8 +2,8 @@
 
 <div class="querybar">
   <h1>And... here you go!</h1>
-  Here is a wines list based off of your requirements. In our calculations, we assume that each person will drink <strong><%= @glassPerPerson %></strong> five-ounce glasses of wine.<br>
-  You will need <%= @bottles.ceil %> bottle(s) with a suggested price per bottle of $<%= @pricePer.round(2) %><br>
+  Here is a list of potential wines to buy based off of your requirements. In our calculations, we assume that each person will drink <strong><%= @glassPerPerson %></strong> five-ounce glasses of wine. <br/> <br/>
+  You will need <strong><%= @bottles.ceil %></strong> bottle(s) with a suggested price per bottle of <strong>$<%= @pricePer.round(2) %></strong>. All wines on this list can be found somewhere in the state of NY for this price; the recommended retail values are listed below.<br>
   <br/><br/>
 
   <strong>Wine List:</strong>
@@ -12,5 +12,5 @@
       <%= print_wine_json(x) %>
     <%end%>
   </ol>
-  <% @result %>
+  <a href="/">Make Another List</a><br/>
 </div>
