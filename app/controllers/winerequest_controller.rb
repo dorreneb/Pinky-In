@@ -44,6 +44,10 @@ def getRequiredBottles(numPeople)
   glassPerBottle = 5.0
   @glassPerPerson = params[:glassPB].to_i
   num = (numPeople * @glassPerPerson) / glassPerBottle
+  if num<1 
+    return 1.to_f
+  end
+  num
 end
 
 def persists?
