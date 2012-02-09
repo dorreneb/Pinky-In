@@ -15,24 +15,17 @@ def search
     @bottles = getRequiredBottles(query.numPeople)
     @pricePer = query.budget / @bottles
 
-    baseURI=URI.parse("http://services.wine.com/api/beta2/service.svc/json")
+    #baseURI=URI.parse("http://services.wine.com/api/beta2/service.svc/json")
     key="64ba3033b310a41261d07d4a95726bd5"
     types = Array["","Any","Red","White"]
-    #temp=URI.parse("/catalog?filter=categories(490+124)&offset=10&size=5&apikey=#{key}")
-    request = "http://services.wine.com/api/beta2/service.svc/json/catagorymap?apikey=#{key}"
+    request = URI.encode("http://services.wine.com/api/beta2/service.svc/json/catalog?state=NY&apikey=#{key}&filter=price(0|#{@pricePer})")
     if params[:type].to_i != 1    #any=1, red=2, white=3
       request = request + "&search=#{types[params[:type].to_i]}"
     end
     
-
-    #json = JSON.parse(open(request).read)
-    return render :text => "The wine type requested is #{request} they type number was #{params[:type]}" 
-    #return render :text => "bottles: #{@bottles.round(2)} with suggested price per bottle: #{@pricePer.round(2)}"
-
-    render 'results'
-    @bottles = getRequiredBottles(query.budget)
-    @pricePer = query.budget/@bottles
-
+    #return render :text => "The wine type requested is #{request} the type number was #{params[:type]}" 
+    #return render :text => "bottles: #{@bottles.ceil} with suggested price per bottle: #{@pricePer.round(2)}"
+ 
     @json = JSON.parse(open(request).read)
     
     if @json.length <= 0
@@ -49,7 +42,7 @@ end
 
 def getRequiredBottles(numPeople)
   glassPerBottle = 5.0
-  @glassPerPerson = 2.0
+  @glassPerPerson = params[:glassPB].to_i
   num = (numPeople * @glassPerPerson) / glassPerBottle
 end
 

@@ -5,8 +5,7 @@
 
   <div class="querybar">
     <h1>I would like to buy some wine.</h1>
-    <br/>
-
+    <br>
     <%= form_tag("/search", :method => "post") do %>
       I have $
       <%= text_field_tag(:budget, nil, :class => 'textbox') %>
@@ -19,6 +18,15 @@
 	<option value="1" selected="selected">Any</option>
 	<option value="2">Red</option>
 	<option value="3">White</option>
+      </select>
+      <br>
+      Drunktitude 
+      <select name="glassPB">
+	<option value="1">Tasting</option>
+	<option value="2" selected="selected">Acceptable</option>
+	<option value="3">RIT Party</option>
+	<option value="4">Party</option>
+	<option value="5">Wooooo!!!</option>
       </select>
       <%= submit_tag("Find me wines!") %>
     <% end %>
