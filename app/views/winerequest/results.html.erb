@@ -1,4 +1,14 @@
 <%= flash_helper %>
 
-Results go here!
-<% @result %>
+<div class="querybar">
+  <h1>And... here you go!</h1>
+  Here is a wines list based off of your requirements. In our calculations, we assume that each person will drink <strong><%= @glassPerPerson %></strong> five-ounce glasses of wine.
+  <br/><br/>
+
+  <strong>Wine List:</strong>
+  <ul>
+    <li> Wine 1 </li>
+    <li> Wine 2 </li>
+  </ul>
+  <% @result %>
+</div>

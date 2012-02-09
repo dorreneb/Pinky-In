@@ -2,8 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$top-gradient: #EED5B7;
-$bottom-gradient: #f7eadb;
+$bottom-gradient: #121212;
+$top-gradient: black;
 
 html {
   background: $bottom-gradient;
@@ -25,6 +25,7 @@ html {
   position: relative;
   top: 100px;
   left: 10%;
+  min-height: 100px;
 
   /*Handle text*/
   font-family: Copperplate / Copperplate Gothic Light, sans-serif;
