@@ -6,9 +6,10 @@
   <br/><br/>
 
   <strong>Wine List:</strong>
-  <ul>
-    <li> Wine 1 </li>
-    <li> Wine 2 </li>
-  </ul>
+  <ol>
+    <% @json["Products"]["List"].each do |x| %>
+      <%= print_wine_json(x) %>
+    <%end%>
+  </ol>
   <% @result %>
 </div>

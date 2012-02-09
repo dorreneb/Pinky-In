@@ -30,6 +30,16 @@ def search
     #return render :text => "bottles: #{@bottles.round(2)} with suggested price per bottle: #{@pricePer.round(2)}"
 
     render 'results'
+    @bottles = getRequiredBottles(query.budget)
+    @pricePer = query.budget/@bottles
+
+    @json = JSON.parse(open(request).read)
+    
+    if @json.length <= 0
+      render 'nosolution'
+    else 
+      render 'results'
+    end
   else
     flash[:notice] = "Error: invalid entries."
     render 'form'
