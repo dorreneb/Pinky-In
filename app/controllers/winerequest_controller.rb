@@ -5,7 +5,14 @@ def form
 end
 
 def search
-  render 'results'
+  query = Winerequest.new(params[:budget], params[:numPeople])
+
+  if query.valid?
+    render 'results'
+  else
+    flash[:notice] = "Error: invalid entries."
+    render 'form'
+  end
 end
 
 end
