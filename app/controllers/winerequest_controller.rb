@@ -25,10 +25,13 @@ def search
     @pricePer = query.budget/@bottles
     #@pricePer.round_to(2)
 
-    json = JSON.parse(open(request).read)
-    return render :text => "The object is #{json}"
-
-    render 'results'
+    @json = JSON.parse(open(request).read)
+    
+    if @json.length <= 0
+      render 'nosolution'
+    else 
+      render 'results'
+    end
   else
     flash[:notice] = "Error: invalid entries."
     render 'form'
