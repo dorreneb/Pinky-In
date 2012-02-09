@@ -7,14 +7,15 @@ $top-gradient: black;
 
 html {
   background: $bottom-gradient;
-  background: $bottom-gradient, url('/assets/winebottle.png') no-repeat bottom right fixed;
-  background: url('/assets/winebottle.png') no-repeat bottom right fixed, -moz-linear-gradient($bottom-gradient, $top-gradient);
-  background: url('/assets/winebottle.png') no-repeat bottom right fixed, -webkit-gradient(linear, 0 0, 0 50%, from($bottom-gradient), to($top-gradient)); 
+  background: $bottom-gradient, url('/assets/winebottle.png') no-repeat bottom right;
+  background: url('/assets/winebottle.png') no-repeat bottom right, -moz-linear-gradient($bottom-gradient, $top-gradient);
+  background: url('/assets/winebottle.png') no-repeat bottom right, -webkit-gradient(linear, 0 0, 0 50%, from($bottom-gradient), to($top-gradient)); 
   -webkit-background-size: auto;
   -moz-background-size: auto;
   -o-background-size: auto;
   background-size: auto;
 
+  background-attachment: fixed;
   min-width: 1000px;
   height: 100%;
 }
