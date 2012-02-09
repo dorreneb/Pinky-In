@@ -6,20 +6,28 @@ def form
 end
 
 def search
-  
+
+  #render 'results'
+  query = Winerequest.new(params[:budget], params[:numPeople])
+
+
   baseURI=URI.parse("http://services.wine.com/api/beta2/service.svc/json")
   key="64ba3033b310a41261d07d4a95726bd5"
   temp=URI.parse("/catalog?filter=categories(490+124)&offset=10&size=5&apikey=#{key}")
 
-  @bottles = getRequiredBottles(params[:numPeople])
-  @pricePer = params[:budget].to_i/@bottles
+  @bottles = getRequiredBottles(query.budget.to_i)
+  @pricePer = query.budget.to_i/@bottles
   #@pricePer.round_to(2)
 
   @results = Net::HTTP::Get.new(baseURI,temp)
-  
-  return render :text => results
 
-  #render 'results'
+  if query.valid?
+    render 'results'
+  else
+    flash[:notice] = "Error: invalid entries."
+    render 'form'
+  end
+
 end
 
 def getRequiredBottles(numPeople)

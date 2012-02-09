@@ -1,3 +1,51 @@
 // Place all the styles related to the winerequest controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$top-gradient: #EED5B7;
+$bottom-gradient: #f7eadb;
+
+html {
+  background: $bottom-gradient;
+  background: $bottom-gradient, url('/assets/winebottle.png') no-repeat bottom right fixed;
+  background: url('/assets/winebottle.png') no-repeat bottom right fixed, -moz-linear-gradient($bottom-gradient, $top-gradient);
+  background: url('/assets/winebottle.png') no-repeat bottom right fixed, -webkit-gradient(linear, 0 0, 0 50%, from($bottom-gradient), to($top-gradient)); 
+  -webkit-background-size: auto;
+  -moz-background-size: auto;
+  -o-background-size: auto;
+  background-size: auto;
+
+  min-width: 1000px;
+  height: 100%;
+}
+
+.querybar {
+  /*Handle position on screen.*/
+  width: 60%;
+  position: relative;
+  top: 100px;
+  left: 10%;
+
+  /*Handle text*/
+  font-family: Copperplate / Copperplate Gothic Light, sans-serif;
+  padding: 5px 5px;
+
+  background-color: white;
+  
+  /*Handle circular edges.*/
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+
+  /*Handle box shadows.*/
+  box-shadow: -5px 5px 2px #888;
+  -webkit-box-shadow: -5px 5px 2px #888;
+  -moz-box-shadow: -5px 5px 2px #888;
+
+}
+
+.textbox {
+  width: 50px;
+}
+
+
