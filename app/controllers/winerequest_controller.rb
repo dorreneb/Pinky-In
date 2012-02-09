@@ -15,4 +15,8 @@ def search
   end
 end
 
+def persists?
+  false
+end
+
 end
