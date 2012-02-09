@@ -1,4 +1,4 @@
-//desc of project
+Warning: this code is janky as all hell until further notice. Considering we did it in one day (and that includes time spent learning how to set up/use Ruby/RoR, it's not terrible :)
 
 Runs in:
     Safari 3+
@@ -7,5 +7,3 @@ Runs in:
     Opera 10+ 
     Firefox 3.6+
 
-Some useful links:
-stackoverflow.com/questions/6838996/form-data-processing-in-ruby-on-rails
