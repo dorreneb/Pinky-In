@@ -19,7 +19,7 @@ def search
   @pricePer = query.budget.to_i/@bottles
   #@pricePer.round_to(2)
 
-  @results = Net::HTTP::Get.new(baseURI,temp)
+  @results = Net::HTTP.get(baseURI,temp)
 
   if query.valid?
     render 'results'
@@ -37,12 +37,8 @@ def getRequiredBottles(numPeople)
   num
 end
 
-<<<<<<< HEAD
-
-=======
 def persists?
   false
 end
->>>>>>> 3c00fb0952db20e2147caee6f5c84ecd0bc09867
 
 end
