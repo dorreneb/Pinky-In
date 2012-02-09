@@ -13,8 +13,16 @@
       to accommodate 
       <%= text_field_tag(:numPeople, nil, :class=> 'textbox') %>
       people.
+      <br>
+      What kind of wine would you like? 
+      <select name="type">
+	<option value="1" selected="selected">Any</option>
+	<option value="2">Red</option>
+	<option value="3">White</option>
+      </select>
       <%= submit_tag("Find me wines!") %>
     <% end %>
+    
   </div>
 </body>
 </html>
