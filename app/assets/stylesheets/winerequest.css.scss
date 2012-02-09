@@ -2,16 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$tan: #EED5B7;
+$top-gradient: #EED5B7;
+$bottom-gradient: #f7eadb;
 
 html {
-  background: $tan url('/assets/winebottle.png') no-repeat bottom right fixed;
+  background: $bottom-gradient;
+  background: $bottom-gradient, url('/assets/winebottle.png') no-repeat bottom right fixed;
+  background: url('/assets/winebottle.png') no-repeat bottom right fixed, -moz-linear-gradient($bottom-gradient, $top-gradient);
+  background: url('/assets/winebottle.png') no-repeat bottom right fixed, -webkit-gradient(linear, 0 0, 0 50%, from($bottom-gradient), to($top-gradient)); 
   -webkit-background-size: auto;
   -moz-background-size: auto;
   -o-background-size: auto;
   background-size: auto;
 
   min-width: 1000px;
+  height: 100%;
 }
 
 .querybar {
@@ -22,6 +27,7 @@ html {
   left: 10%;
 
   /*Handle text*/
+  font-family: Copperplate / Copperplate Gothic Light, sans-serif;
   padding: 5px 5px;
 
   background-color: white;

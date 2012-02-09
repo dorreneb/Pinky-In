@@ -7,7 +7,7 @@
     <%= form_tag("/search", :method => "post") do %>
       I have $
       <%= text_field_tag(:budget, nil, :class => 'textbox') %>
-      to accomodate 
+      to accommodate 
       <%= text_field_tag(:numPeople, nil, :class=> 'textbox') %>
       people.
       <%= submit_tag("Find me wines!") %>
