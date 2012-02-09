@@ -2,12 +2,22 @@ class Winerequest < ActiveRecord::Base
 
   attr_reader :budget, :numPeople
 
-  validates :budget, :presence => true
-  validates :numPeople, :presence => true
-
   def initialize(money, people)
-    @budget = money
-    @numPeople = people
+    begin
+      @budget = money.to_i
+      @numPeople = people.to_i
+    rescue
+      @budget = ""
+      @numPeople = ""
+    end
+  end
+
+  def valid?
+    if @budget.is_a? Integer and @numPeople.is_a? Integer and @budget != 0 and @numPeople != 0
+      true
+    else
+      false
+    end
   end
 
   def save
