@@ -10,12 +10,32 @@ html {
   -moz-background-size: auto;
   -o-background-size: auto;
   background-size: auto;
+
+  min-width: 1000px;
 }
 
 .querybar {
-  border: 1px solid black;
+  /*Handle position on screen.*/
+  width: 60%;
   position: relative;
-  width: auto;
+  top: 100px;
+  left: 10%;
+
+  /*Handle text*/
+  padding: 5px 5px;
+
+  background-color: white;
+  
+  /*Handle circular edges.*/
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+
+  /*Handle box shadows.*/
+  box-shadow: -5px 5px 2px #888;
+  -webkit-box-shadow: -5px 5px 2px #888;
+  -moz-box-shadow: -5px 5px 2px #888;
+
 }
 
 .textbox {
