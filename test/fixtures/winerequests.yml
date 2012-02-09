@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  budget: 1.5
+  numPeople: 1
+
+two:
+  budget: 1.5
+  numPeople: 1

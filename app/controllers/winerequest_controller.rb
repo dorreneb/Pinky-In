@@ -37,6 +37,12 @@ def getRequiredBottles(numPeople)
   num
 end
 
+<<<<<<< HEAD
 
+=======
+def persists?
+  false
+end
+>>>>>>> 3c00fb0952db20e2147caee6f5c84ecd0bc09867
 
 end
